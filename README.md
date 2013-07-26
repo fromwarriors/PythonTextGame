@@ -1,0 +1,1 @@
+Small text game to get used to python
