@@ -6,17 +6,19 @@
 
 #Move set 1-4 = first row 5-8 = second row 9-12 = third row 12-15 = fourth row
 class Floor(object):
-	generatedMap = 0
-	userMap = 0
-	mounsterCount = 0
-	floorNumber = 0
+#	PROPERTIES
+#	generatedMap
+#	userMap
+#	mounsterCount
+#	floorNumber
+
 	def __init__(self, floorNumber):
 		#Map setup
 		self.generatedMap = [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]
 		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
-		
+		self.floorNumber = floorNumber
 		if(floorNumber == 1):
-			monsterCount = 2
+			self.monsterCount = 2
 	
 #	def generateMonsters(self):
 

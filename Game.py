@@ -1,6 +1,6 @@
 #Initial Setup
 import sys
-import Tower
+from Tower import Floor
 #Game intro
 #Initial warning
 print "\nThis game doesn't save and one death will restart the game enter 0 at any point in the game to bring up the menu\n"
@@ -26,8 +26,9 @@ if(menuSelection == '1'):
 	notification will let you know when the boss appears.\n"""
 	
 	
-	floor1 = Tower.Floor(1)
-	#floor1.displayMap()
+	floor1 = Floor(1)
+	
+	
 elif(menuSelection == '2'):
 	sys.exit()
 	
