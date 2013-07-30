@@ -1,15 +1,17 @@
 #Initial Setup
 import sys
+from random import randint
 from Tower import Floor
+from Character import Player
 #Game intro
 #Initial warning
-print "\nThis game doesn't save and one death will restart the game enter 0 at any point in the game to bring up the menu\n"
+#print "\nThis game doesn't save and one death will restart the game enter 0 at any point in the game to bring up the menu\n"
 
 #Main Menu
 menuSelection = 0
 while(menuSelection != '1' and menuSelection != '2'):
 	print "Press 1 to start a new game or 2 to quit"
-	menuSelection = raw_input('>')
+	menuSelection = raw_input('> ')
 
 #begin game
 if(menuSelection == '1'):
@@ -25,10 +27,21 @@ if(menuSelection == '1'):
 
 	notification will let you know when the boss appears.\n"""
 	
-	
-	floor1 = Floor(1)
-	
-	
+	characterSelection = 0
+	while(characterSelection != '1'):
+		print "Select your class:"
+		print "1: Warrior"
+		characterSelection = raw_input('> ')
+	if(characterSelection == '1'):
+		mainCharacter = Player("Warrior")
+		print "These are your character stats: "
+		print "Strength:", mainCharacter.strength
+		print "Dexterity:", mainCharacter.dexterity
+		print "Intelligence:", mainCharacter.intelligence
+		print "HP:", mainCharacter.hitPoints
+		print "MP:", mainCharacter.magicPoints
+		
+		
 elif(menuSelection == '2'):
 	sys.exit()
 	
