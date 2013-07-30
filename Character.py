@@ -14,6 +14,8 @@ class Player():
 		self.magicPoints = 5 + self.intelligence
 	
 #Dungeons and dragons mechanics	
+
+#Roll an initial die to see if you can get the attack off then roll for damage
 	def attack(self, monsterDexterity, monsterArmor):
 		initialRoll = randint(0,20)
 		rollToHit = initialRoll + self.dexterity
@@ -28,3 +30,4 @@ class Player():
 				return randint(0,6) + self.strength - monsterArmor
 		else:
 			print "Missed!"
+			return 0
