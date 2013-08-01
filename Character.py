@@ -12,6 +12,10 @@ class Player():
 		self.dexterity = randint(5,10)
 		self.intelligence = randint(5,10)
 		self.magicPoints = 5 + self.intelligence
+		
+		#map
+		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
+
 	
 #Dungeons and dragons mechanics	
 
@@ -31,3 +35,26 @@ class Player():
 		else:
 			print "Missed!"
 			return 0
+	
+#Check the current position if its a valid move, if it is then mark the map where the character currently is and update the map where the 
+#character has been and return new position	
+
+	#direction is 'n','w','s','e'
+	#position is a tuple row, column
+	def move(self, direction, position):
+		canMove = True
+		if(direction == 'w'):
+			if(c == 0):
+				canMove = False
+			else:
+				
+	
+			
+	def newFloor(self):
+		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
+
+		
+	def displayMap(self):
+		for i in range(0,4):
+			print self.userMap[i]
+			print "\n"

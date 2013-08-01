@@ -41,7 +41,9 @@ if(menuSelection == '1'):
 		print "HP:", mainCharacter.hitPoints
 		print "MP:", mainCharacter.magicPoints
 		
-		
+	
+	
+	
 elif(menuSelection == '2'):
 	sys.exit()
 	

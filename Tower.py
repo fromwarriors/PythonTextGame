@@ -5,6 +5,9 @@
 #already been
 
 #Move set 1-4 = first row 5-8 = second row 9-12 = third row 12-15 = fourth row
+from random import randint
+from Character import Player
+
 class Floor(object):
 #	PROPERTIES
 #	generatedMap
@@ -12,17 +15,23 @@ class Floor(object):
 #	mounsterCount
 #	floorNumber
 
-	def __init__(self, floorNumber):
+	def __init__(self, floorNumber, character):
 		#Map setup
 		self.generatedMap = [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]
-		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
 		self.floorNumber = floorNumber
 		if(floorNumber == 1):
 			self.monsterCount = 2
-	
+		
+		#monster placement
+		for (i in range (0, self.monsterCount)):
+			row = randint(0,4)
+			column = randint(0,4)
+			while(self.generatedMap[row][column] == column):
+				row = randint(0,4)
+				column = randint(0,4)
+			self.generatedMap[row][column] = 'M'
+		
+		
+			
 #	def generateMonsters(self):
 
-	def displayMap(self):
-		for i in range(0,4):
-			print self.userMap[i]
-			print "\n"
