@@ -39,16 +39,38 @@ class Player():
 #Check the current position if its a valid move, if it is then mark the map where the character currently is and update the map where the 
 #character has been and return new position	
 
+#the grid is bottom right is 0,0 and top left is 3,3
+
 	#direction is 'n','w','s','e'
 	#position is a tuple row, column
 	def move(self, direction, position):
 		canMove = True
 		if(direction == 'w'):
-			if(c == 0):
+			if(position[1] == 3):
 				canMove = False
-			else:
-				
+		elif(direction == 'n'):
+			if(position[0] == 3):
+				canMove = False
+		elif(direction == 's'):
+			if(position[0] == 0):
+				canMove = False
+		elif(direction == 'e'):
+			if(position[1] == 0):
+				canMove = False				
+		
+	#update the map
+		updateMap(position)
 	
+	#Return new position
+		if(direction == 'w'):
+			return (position[0],position[1]+1)
+		elif(direction == 'n'):
+			return (position[0]+1,position[1])
+		elif(direction == 's'):
+			return (position[0]-1,position[1]+1)
+		elif(direction == 'e'):
+			return (position[0],position[1]-1)	
+		
 			
 	def newFloor(self):
 		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
@@ -58,3 +80,6 @@ class Player():
 		for i in range(0,4):
 			print self.userMap[i]
 			print "\n"
+			
+	def updateMap(self, position)
+		self.userMap[position[0]][position[1]] = "[X]"
