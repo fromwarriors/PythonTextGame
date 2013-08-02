@@ -23,7 +23,7 @@ class Floor(object):
 			self.monsterCount = 2
 		
 		#monster placement
-		for (i in range (0, self.monsterCount)):
+		for i in range (0, self.monsterCount):
 			row = randint(0,4)
 			column = randint(0,4)
 			while(self.generatedMap[row][column] == column):
@@ -32,6 +32,3 @@ class Floor(object):
 			self.generatedMap[row][column] = 'M'
 		
 		
-			
-#	def generateMonsters(self):
-

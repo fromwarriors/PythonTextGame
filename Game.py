@@ -42,7 +42,7 @@ if(menuSelection == '1'):
 		print "MP:", mainCharacter.magicPoints
 		
 	
-	
+	floor1 = Floor(1, mainCharacter)
 	
 elif(menuSelection == '2'):
 	sys.exit()

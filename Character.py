@@ -24,7 +24,7 @@ class Player():
 		initialRoll = randint(0,20)
 		rollToHit = initialRoll + self.dexterity
 		critical = false
-		if(initialRoll = 20):
+		if(initialRoll == 20):
 			critical = true
 		if(rollToHit >= monsterDexterity):
 			#If hit commence damage sequence
@@ -56,10 +56,13 @@ class Player():
 				canMove = False
 		elif(direction == 'e'):
 			if(position[1] == 0):
-				canMove = False				
-		
+				canMove = False	
+
+				
+		if(canMove == False):
+			return False
 	#update the map
-		updateMap(position)
+		updateMap(position, direction)
 	
 	#Return new position
 		if(direction == 'w'):
@@ -73,7 +76,7 @@ class Player():
 		
 			
 	def newFloor(self):
-		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
+		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
 
 		
 	def displayMap(self):
@@ -81,5 +84,13 @@ class Player():
 			print self.userMap[i]
 			print "\n"
 			
-	def updateMap(self, position)
+	def updateMap(self, position, direction):
 		self.userMap[position[0]][position[1]] = "[X]"
+		if(direction == 'w'):
+			return (position[0],position[1]+1)
+		elif(direction == 'n'):
+			return (position[0]+1,position[1])
+		elif(direction == 's'):
+			return (position[0]-1,position[1]+1)
+		elif(direction == 'e'):
+			return (position[0],position[1]-1)	
