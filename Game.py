@@ -46,7 +46,3 @@ if(menuSelection == '1'):
 	
 elif(menuSelection == '2'):
 	sys.exit()
-	
-
-
-
